@@ -1,0 +1,284 @@
+<section ng-controller="BusquedaController">
+  <form>
+
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" id="sample4" ng-model="searchPokemon">
+        <label class="mdl-textfield__label" for="sample4">numero o nombre pokemon </label>
+
+      </div>
+
+
+      <button ng-click="search(searchPokemon)" class="">
+        <i class="">buscar</i>
+      </button>
+    </form>
+
+
+		<div>
+				<div ng-hide="isSearching" id="pokeball"></div>
+				    <div ng-hide="!isSearching">
+				</div>
+      	<div ng-hide="!isSearching" class="col-md-3 col-xs-5 ">
+        </div>
+    </div>
+  <br>
+<div class="container-fluid">
+
+
+  <div class="row">
+  		<div class="panel panel-primary">
+  			<div class="panel-heading">
+  				Pokemon Card
+  				<span class="label label-default pull-right"># <strong>{{ pokemon.id }}</strong></span>
+  			</div>
+
+  <div class="col-md-4">
+    <br>
+					<div class="panel panel-default">
+						<div class="panel-heading">Normal</div>
+						<div class="panel-body">
+              <div class="col-md-6 center-block poke"
+                style="background-image: url('{{pokemon.sprites.front_default}}');">
+              </div>
+              <div class="col-md-6 center-block poke"
+                style="background-image: url('{{pokemon.sprites.front_female}}');">
+
+
+              </div>
+
+						</div>
+					</div>
+          <div class="panel panel-default">
+						<div class="panel-heading">SHINY</div>
+						<div class="panel-body ">
+              <div class="col-md-6 center-block poke"
+                style="background-image: url('{{pokemon.sprites.front_shiny}}');">
+              </div>
+              <div class="col-md-6 center-block poke"
+                style="background-image: url('{{pokemon.sprites.front_shiny_female}}');">
+              </div>
+						</div>
+					</div>
+				</div>
+  <div class="col-md-4">
+    <br>
+					<div class="panel panel-default">
+						<div class="panel-heading">Información</div>
+						<div class="panel-body">
+							<table class="table table-striped table-condensed">
+								<tbody>
+									<tr>
+										<td><strong>ID</strong></td>
+										<td>{{ pokemon.id }}</td>
+									</tr>
+									<tr>
+										<td><strong>Nombre</strong></td>
+										<td>{{ pokemon.name | uppercase}}
+                      <span ng-hide="!isSearching">
+                          {{tipo | uppercase}}
+            				  </span>
+                    </td>
+									</tr>
+									<tr>
+										<td><strong>Especie</strong></td>
+										<td>{{ pokemon.speciesUrl.id }}</td>
+									</tr>
+									<tr>
+										<td>
+											<strong>
+												Tipo <span data-ng-if="pokemon.type.length > 1" ></span>
+											</strong>
+										</td>
+										<td>
+											<div  class="pull-left">
+												<span ng-attr-id="{{pokemonType}}">{{pokemon.types[0].type.name}}</span>
+                        <span ng-attr-id="{{pokemonType2}}">{{pokemon.types[1].type.name}}</span>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td><strong>Altura </strong></td>
+
+										<td>{{ pokemon.height  * 0.1 | number : 1 }}
+                      <span ng-hide="!isSearching">
+                        {{altura}}
+                      </span>
+                    </td>
+									</tr>
+									<tr>
+										<td><strong>Peso</strong></td>
+										<td>{{ pokemon.weight * 0.1 | number : 1 }}
+                      <span ng-hide="!isSearching">
+                        {{peso}}
+                      </span>
+                    </td>
+									</tr>
+									<tr>
+										<td><strong>Habilidades</strong></td>
+										<td>
+											<ul class="list-unstyled">
+												<li data-ng-repeat="ability in ability">
+													<a href="#/ability/{{ ability | normalize }}">{{ ability }}</a>
+												</li>
+                        <p>{{pokemon.abilities[0].ability.name }}</p>
+              					<p>{{pokemon.abilities[1].ability.name }}</p>
+              					<p>{{pokemon.abilities[2].ability.name }}</p>
+											</ul>
+										</td>
+									</tr>
+                  <tr>
+                    <td><strong>Movimientos</strong></td>
+                     {{moves.length}}
+                  </tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+  <div class="col-md-4">
+    <br>
+					<div class="panel panel-default">
+						<div class="panel-heading">Estadisitcas</div>
+						<div class="panel-body">
+							<dl>
+								<dt>{{pokemon.stats[0].stat.name }}<small>
+                  <span ng-hide="!isSearching">
+                    {{parentesis1}}
+                  </span>
+                  {{pokemon.stats[0].base_stat }}
+                  <span ng-hide="!isSearching">
+                    {{parentesis2}}
+                  </span>
+
+                </small>
+                </dt>
+								<dd>
+									<div class="progress progress-striped active">
+										<div class="progress-bar" style="width: {{ pokemon.stats[0].base_stat }}%"></div>
+									</div>
+								</dd>
+							</dl>
+							<dl>
+                <dt>{{pokemon.stats[1].stat.name }}<small>
+                  <span ng-hide="!isSearching">
+                    {{parentesis1}}
+                  </span>
+                  {{pokemon.stats[1].base_stat }}
+                  <span ng-hide="!isSearching">
+                    {{parentesis2}}
+                  </span>
+
+                </small>
+                </dt>
+								<dd>
+									<div class="progress progress-striped active">
+										<div class="progress-bar progress-bar-warning" style="width: {{ pokemon.stats[1].base_stat }}%"></div>
+									</div>
+								</dd>
+							</dl>
+							<dl>
+                <dt>{{pokemon.stats[2].stat.name }}<small>
+                  <span ng-hide="!isSearching">
+                    {{parentesis1}}
+                  </span>
+                  {{pokemon.stats[2].base_stat }}
+                  <span ng-hide="!isSearching">
+                    {{parentesis2}}
+                  </span>
+
+                </small>
+                </dt>
+								<dd>
+									<div class="progress progress-striped active">
+										<div class="progress-bar progress-bar-warning" style="width: {{ pokemon.stats[2].base_stat }}%"></div>
+									</div>
+								</dd>
+							</dl>
+							<dl>
+                <dt>{{pokemon.stats[3].stat.name }}<small>
+                  <span ng-hide="!isSearching">
+                    {{parentesis1}}
+                  </span>
+                  {{pokemon.stats[3].base_stat }}
+                  <span ng-hide="!isSearching">
+                    {{parentesis2}}
+                  </span>
+
+                </small>
+                </dt>
+								<dd>
+									<div class="progress progress-striped active">
+										<div class="progress-bar progress-bar-info" style="width: {{ pokemon.stats[3].base_stat }}%"></div>
+									</div>
+								</dd>
+							</dl>
+							<dl>
+                <dt>{{pokemon.stats[4].stat.name }}<small>
+                  <span ng-hide="!isSearching">
+                    {{parentesis1}}
+                  </span>
+                  {{pokemon.stats[4].base_stat }}
+                  <span ng-hide="!isSearching">
+                    {{parentesis2}}
+                  </span>
+
+                </small>
+                </dt>
+								<dd>
+									<div class="progress progress-striped active">
+										<div class="progress-bar progress-bar-danger" style="width: {{ pokemon.stats[4].base_stat }}%"></div>
+									</div>
+								</dd>
+							</dl>
+              <dl>
+                <dt>{{pokemon.stats[5].stat.name }}<small>
+                  <span ng-hide="!isSearching">
+                    {{parentesis1}}
+                  </span>
+                  {{pokemon.stats[5].base_stat }}
+                  <span ng-hide="!isSearching">
+                    {{parentesis2}}
+                  </span>
+
+                </small>
+                </dt>
+								<dd>
+									<div class="progress progress-striped active">
+										<div class="progress-bar progress-bar-danger" style="width: {{ pokemon.stats[5].base_stat }}%"></div>
+									</div>
+								</dd>
+							</dl>
+              <dl>
+								<dt>
+                  <span ng-hide="!isSearching">
+                    {{base_exp}}
+                  </span>
+                  <small>
+                    <span ng-hide="!isSearching">
+                      {{parentesis1}}
+                    </span>
+                    {{pokemon.base_experience }}
+                    <span ng-hide="!isSearching">
+                      {{parentesis2}}
+                    </span>
+                    </small>
+                </dt>
+								<dd>
+									<div class="progress progress-striped active">
+										<div class="progress-bar progress-bar-success" style="width: {{ pokemon.base_experience }}%"></div>
+									</div>
+								</dd>
+							</dl>
+
+						</div>
+					</div>
+				</div>
+
+</div>
+</div>
+</div>
+</div>
+
+
+</section>

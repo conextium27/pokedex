@@ -1,0 +1,567 @@
+/* 
+INEE-Planeación
+Color base: #02153B;
+Color Base Oscuro: #000A28;
+Color secundario: #3D5C99;
+Contraste 1:; #00DBFF
+Contraste 2:; #FF7940
+Contraste 3:; #CC3114
+*/
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+.blue.inee {
+    background-color: #141B4D;
+    color: #ffffff;
+}
+
+.page-login {
+    background: transparent;
+}
+
+.login-inee {
+    margin: 0% auto;
+    max-width: 400px;
+}
+
+.login-logo {
+    margin: 0% auto;
+    max-height: 100px;
+}
+
+.balance-ponderacion {
+    font-size: 40px;
+}
+
+.balance-ponderacion-tabla {
+    font-size: 20px;
+}
+
+select,
+select.form-control.table-select {
+    font-size: 13px;
+}
+
+.table-form-select {
+    margin-bottom: 0px;
+}
+
+.table-100 {
+    min-width: 100px;
+}
+
+.indigo h3 {
+    color: #fff;
+    font-size: 20px;
+}
+
+
+/* Add flexbox settings */
+
+.grid {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.grid-item {
+    margin-bottom: 2em;
+    display: -webkit-flex;
+    display: flex;
+    align-items: stretch;
+    flex: 0 1 auto;
+}
+
+
+/* END flexbox settings */
+
+.factores-factor {
+    width: 100%;
+}
+
+.factores-dimension {
+    width: 100%;
+}
+
+.factores-reactivo {
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.factores-paginador {
+    width: 100%;
+}
+
+.factores-radio {
+    font-size: 12px;
+}
+
+.factores-rasgo {
+    font-size: 13px;
+    font-style: italic;
+}
+
+.factores-rol {
+    list-style-type: none;
+    padding: 0;
+}
+
+.card-head-bg {
+    height: 70px;
+}
+
+.current-version {
+    font-size: 12px;
+    padding-top: 9px;
+}
+
+.pager-number {
+    font-size: 16px;
+    padding: 5px 0px !important;
+}
+
+.pager-actual {
+    padding: 0px 5px;
+}
+
+.factor-color {
+    color: #fff;
+}
+
+.scroll-reactivos {
+    height: 600px;
+    overflow: auto;
+}
+
+.fijo {
+    position: fixed !important;
+    right: 795px;
+    z-index: 10 !important;
+    width: 300px;
+}
+
+.b-b-1 {
+    border-bottom: solid 1px #f2f2f2;
+}
+
+.ancho-logo {
+    width: 175px;
+}
+
+.alineacion-boton {
+    text-align: center;
+}
+
+.img_svg[src*=svg] {
+    width: 100px;
+}
+
+.pill-span {
+    margin: 0 1px;
+}
+
+.btn-excel {
+    color: #2A784E;
+    background-color: #fff;
+    border-color: transparent;
+}
+
+.btn-excel:focus,
+.btn-excel.focus {
+    color: #2A784E;
+    background-color: #f2f2f2;
+    border-color: transparent;
+}
+
+.btn-excel:hover {
+    color: #2A784E;
+    background-color: #f2f2f2;
+    border-color: transparent;
+}
+
+.btn-excel:active,
+.btn-excel.active,
+.open > .btn-excel.dropdown-toggle {
+    color: #2A784E;
+    background-color: #f2f2f2;
+    border-color: transparent;
+}
+
+.btn-excel:active:hover,
+.btn-excel:active:focus,
+.btn-excel:active.focus,
+.btn-excel.active:hover,
+.btn-excel.active:focus,
+.btn-excel.active.focus,
+.open > .btn-excel.dropdown-toggle:hover,
+.open > .btn-excel.dropdown-toggle:focus,
+.open > .btn-excel.dropdown-toggle.focus {
+    color: #2A784E;
+    background-color: #f2f2f2;
+    border-color: transparent;
+}
+
+.btn-excel:active,
+.btn-excel.active,
+.open > .btn-excel.dropdown-toggle {
+    background-image: none;
+}
+
+.btn-excel.disabled:hover,
+.btn-excel.disabled:focus,
+.btn-excel.disabled.focus,
+.btn-excel[disabled]:hover,
+.btn-excel[disabled]:focus,
+.btn-excel[disabled].focus,
+fieldset[disabled] .btn-excel:hover,
+fieldset[disabled] .btn-excel:focus,
+fieldset[disabled] .btn-excel.focus {
+    background-color: #f2f2f2;
+    border-color: transparent;
+}
+
+.btn-excel .badge {
+    color: #2A784E;
+    background-color: #fff;
+}
+
+.btn-excel.btn-border {
+    border-color: #2A784E;
+    color: #2A784E;
+}
+
+.btn-excel.btn-border:hover,
+.btn-excel.btn-border:focus,
+.btn-excel.btn-border.focus,
+.btn-excel.btn-border:active,
+.btn-excel.btn-border.active,
+.open > .btn-excel.btn-border.dropdown-toggle {
+    color: #fff;
+    background-color: #2A784E;
+}
+
+.btn-pdf {
+    color: red;
+    background-color: #fff;
+    border-color: transparent;
+}
+
+.btn-pdf:focus,
+.btn-pdf.focus {
+    color: red;
+    background-color: #f2f2f2;
+    border-color: transparent;
+}
+
+.btn-pdf:hover {
+    color: red;
+    background-color: #f2f2f2;
+    border-color: transparent;
+}
+
+.btn-pdf:active,
+.btn-pdf.active,
+.open > .btn-pdf.dropdown-toggle {
+    color: red;
+    background-color: #f2f2f2;
+    border-color: transparent;
+}
+
+.btn-pdf:active:hover,
+.btn-pdf:active:focus,
+.btn-pdf:active.focus,
+.btn-pdf.active:hover,
+.btn-pdf.active:focus,
+.btn-pdf.active.focus,
+.open > .btn-pdf.dropdown-toggle:hover,
+.open > .btn-pdf.dropdown-toggle:focus,
+.open > .btn-pdf.dropdown-toggle.focus {
+    color: red;
+    background-color: #f2f2f2;
+    border-color: transparent;
+}
+
+.btn-pdf:active,
+.btn-pdf.active,
+.open > .btn-pdf.dropdown-toggle {
+    background-image: none;
+}
+
+.btn-pdf.disabled:hover,
+.btn-pdf.disabled:focus,
+.btn-pdf.disabled.focus,
+.btn-pdf[disabled]:hover,
+.btn-pdf[disabled]:focus,
+.btn-pdf[disabled].focus,
+fieldset[disabled] .btn-pdf:hover,
+fieldset[disabled] .btn-pdf:focus,
+fieldset[disabled] .btn-pdf.focus {
+    background-color: #f2f2f2;
+    border-color: transparent;
+}
+
+.btn-pdf .badge {
+    color: red;
+    background-color: #fff;
+}
+
+.btn-pdf.btn-border {
+    border-color: red;
+    color: red;
+}
+
+.btn-pdf.btn-border:hover,
+.btn-pdf.btn-border:focus,
+.btn-pdf.btn-border.focus,
+.btn-pdf.btn-border:active,
+.btn-pdf.btn-border.active,
+.open > .btn-pdf.btn-border.dropdown-toggle {
+    color: #fff;
+    background-color: red;
+}
+
+.btn-word {
+    color: #345999;
+    background-color: #fff;
+    border-color: transparent;
+}
+
+.btn-word:focus,
+.btn-word.focus {
+    color: #345999;
+    background-color: #f2f2f2;
+    border-color: transparent;
+}
+
+.btn-word:hover {
+    color: #345999;
+    background-color: #f2f2f2;
+    border-color: transparent;
+}
+
+.btn-word:active,
+.btn-word.active,
+.open > .btn-word.dropdown-toggle {
+    color: #345999;
+    background-color: #f2f2f2;
+    border-color: transparent;
+}
+
+.btn-word:active:hover,
+.btn-word:active:focus,
+.btn-word:active.focus,
+.btn-word.active:hover,
+.btn-word.active:focus,
+.btn-word.active.focus,
+.open > .btn-word.dropdown-toggle:hover,
+.open > .btn-word.dropdown-toggle:focus,
+.open > .btn-word.dropdown-toggle.focus {
+    color: #345999;
+    background-color: #f2f2f2;
+    border-color: transparent;
+}
+
+.btn-word:active,
+.btn-word.active,
+.open > .btn-word.dropdown-toggle {
+    background-image: none;
+}
+
+.btn-word.disabled:hover,
+.btn-word.disabled:focus,
+.btn-word.disabled.focus,
+.btn-word[disabled]:hover,
+.btn-word[disabled]:focus,
+.btn-word[disabled].focus,
+fieldset[disabled] .btn-word:hover,
+fieldset[disabled] .btn-word:focus,
+fieldset[disabled] .btn-word.focus {
+    background-color: #f2f2f2;
+    border-color: transparent;
+}
+
+.btn-word .badge {
+    color: #345999;
+    background-color: #fff;
+}
+
+.btn-word.btn-border {
+    border-color: #345999;
+    color: #345999;
+}
+
+.btn-word.btn-border:hover,
+.btn-word.btn-border:focus,
+.btn-word.btn-border.focus,
+.btn-word.btn-border:active,
+.btn-word.btn-border.active,
+.open > .btn-word.btn-border.dropdown-toggle {
+    color: #fff;
+    background-color: #345999;
+}
+
+.aspecto {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+/* Inicia estilo para listado de menú de wizard */
+
+.wizard {
+    list-style: none;
+    padding: 20px 0 20px;
+    position: relative;
+}
+
+.wizard:before {
+    top: 10px;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 1px;
+    background-color: rgba(0, 0, 0, 0.03);
+    left: 50%;
+    margin-left: -1.5px;
+}
+
+.wizard > li {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.wizard > li:before {
+    content: " ";
+    display: table;
+}
+
+.wizard > li:after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+.wizard > li:before {
+    content: " ";
+    display: table;
+}
+
+.wizard > li:after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+.wizard > li > .wizard-panel {
+    width: 46%;
+    float: left;
+    position: relative;
+}
+
+.wizard > li > .wizard-panel:after {
+    position: absolute;
+    top: 27px;
+    right: -14px;
+    display: inline-block;
+    content: " ";
+}
+
+.wizard > li > .wizard-badge {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 1.4em;
+    text-align: center;
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    margin-left: -25px;
+    z-index: 100;
+    background: #f9f9f9;
+}
+
+.wizard > li.wizard-inverted > .wizard-panel {
+    float: right;
+}
+
+.wizard > li.wizard-inverted > .wizard-panel:before {
+    border-left-width: 0;
+    border-right-width: 15px;
+    left: -15px;
+    right: auto;
+}
+
+.wizard > li.wizard-inverted > .wizard-panel:after {
+    border-left-width: 0;
+    border-right-width: 14px;
+    left: -14px;
+    right: auto;
+}
+
+.wizard-title {
+    font-size: 13px;
+    margin: 0px;
+}
+
+.wizard-body {
+    line-height: 17px;
+    margin-top: 5px;
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.wizard-body p {
+    margin-bottom: 5px;
+}
+
+ul.wizard:before {
+    left: 10px;
+}
+
+ul.wizard > li > .wizard-panel {
+    width: calc(100% - 40px);
+}
+
+ul.wizard > li > .wizard-badge {
+    left: -8px;
+    margin-left: 0;
+    top: -10px;
+    text-align: center;
+}
+
+ul.wizard > li > .wizard-panel {
+    float: right;
+}
+
+ul.wizard > li > .wizard-panel:before {
+    border-left-width: 0;
+    border-right-width: 15px;
+    left: -15px;
+    right: auto;
+}
+
+ul.wizard > li > .wizard-panel:after {
+    border-left-width: 0;
+    border-right-width: 14px;
+    left: -14px;
+    right: auto;
+}
+
+#data img {
+    max-width: 40px;
+}

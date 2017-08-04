@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" >
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Sistema de Evaluación para Personal del INEE">
+        <meta name="author" content="Infotec">
+        <link rel="shortcut icon" href="assets/img/favicon/favicon.ico">
+        <title>pokedex</title>
+        <!--Notificaciones-->
+
+    </head>
+    <body >
+
+      <div ui-view="header"></div>
+      <div ui-view="main"></div>
+      <div ui-view="sidebar"></div>
+
+        <!-- inject: js globals -->
+        <script charset="utf-8" src="assets/libs/jquery/jquery.min.js"></script>
+        <script charset="utf-8" src="assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script charset="utf-8" src="assets/libs/angular/angular.min.js"></script>
+        <script charset="utf-8" src="assets/libs/angular/complements/angular-resource/angular-resource.js"></script>
+        <script charset="utf-8" src="assets/libs/angular/complements/angular-ui-router/angular-ui-router.min.js"></script>
+        <script charset="utf-8" src="assets/libs/angular/complements/angular-storage/ngStorage.min.js"></script>
+
+        <!-- endinject -->
+
+        <!-- inject: app js -->
+        <script src="app/app.js"></script>
+        <script src="app/app-config.js"></script>
+        <script src="app/app-run.js"></script>
+        <script src="app/app-constants.js"></script>
+        <!-- endinject -->
+
+        <!-- inject: main js -->
+         <script src="app/consulta/controllers/busqueda.controller.js"></script>
+        <!-- endinject -->
+        <link href="assets/css/styles.css" rel="stylesheet" />
+        <link rel="stylesheet" href="assets/libs/bootstrap/dist/css/bootstrap.min.css">
+
+    </body>
+</html>
