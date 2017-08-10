@@ -39,17 +39,16 @@
 						<div class="panel-body">
               <div class="col-md-6">
                 <div class="row">
-                  <div  class="col-md-12 center-block poke"
-                      style=" background-image: url('{{pokemon.sprites.front_default}}');">
-                        <i  aria-hidden="true"></i>
+                  <div class="slider">
+                    <div class="col-md-12 col-xs-12 center-block poke"
+                        style="background-image: url('{{pokemon.sprites.front_default}}');">
+                          <i  aria-hidden="true"></i>
+                    </div>
+                    <div class="col-md-12 col-xs-12 center-block poke"
+                        style="background-image: url('{{pokemon.sprites.back_default}}');">
+                          <i  aria-hidden="true"></i>
+                    </div>
                   </div>
-
-              <!--    <div class="poke"
-                     ng-init="''"
-                     ng-mouseenter=" {{pokemon.sprites.front_default}}"
-                     ng-mouseleave=" {{pokemon.sprites.back_default}}"
-                     style="background-image: url('{{pokemon.sprites.back_default}}');">123
-                  </div>  -->
                 </div>
                 <div class="row">
                   <div class="col-md-6 col-md-offset-4 ">
@@ -61,9 +60,15 @@
               </div>
               <div class="col-md-6">
                 <div class="row">
-                  <div class="col-md-12 center-block poke"
-                      style="background-image: url('{{pokemon.sprites.front_female}}');">
-                        <i  aria-hidden="true"></i>
+                  <div class="slider">
+                    <div class="col-md-12 center-block poke"
+                        style="background-image: url('{{pokemon.sprites.front_female}}');">
+                          <i  aria-hidden="true"></i>
+                    </div>
+                    <div class="col-md-12 center-block poke"
+                        style="background-image: url('{{pokemon.sprites.back_female}}');">
+                          <i  aria-hidden="true"></i>
+                    </div>
                   </div>
 
                 </div>
@@ -83,9 +88,15 @@
 						<div class="panel-body">
               <div class="col-md-6">
                 <div class="row">
-                  <div class="col-md-12 center-block poke"
-                      style="background-image: url('{{pokemon.sprites.front_shiny}}');">
-                        <i  aria-hidden="true"></i>
+                  <div class="slider">
+                    <div class="col-md-12 center-block poke"
+                        style="background-image: url('{{pokemon.sprites.front_shiny}}');">
+                          <i  aria-hidden="true"></i>
+                    </div>
+                    <div class="col-md-12 center-block poke"
+                        style="background-image: url('{{pokemon.sprites.back_shiny}}');">
+                          <i  aria-hidden="true"></i>
+                    </div>
                   </div>
                 </div>
                 <div class="row">
@@ -98,9 +109,15 @@
               </div>
               <div class="col-md-6">
                 <div class="row">
-                  <div class="col-md-12 center-block poke"
-                      style="background-image: url('{{pokemon.sprites.front_shiny_female}}');">
-                        <i  aria-hidden="true"></i>
+                  <div class="slider">
+                    <div class="col-md-12 center-block poke"
+                        style="background-image: url('{{pokemon.sprites.front_shiny_female}}');">
+                          <i  aria-hidden="true"></i>
+                    </div>
+                    <div class="col-md-12 center-block poke"
+                        style="background-image: url('{{pokemon.sprites.back_shiny_female}}');">
+                          <i  aria-hidden="true"></i>
+                    </div>
                   </div>
                 </div>
                 <div class="row">
@@ -115,116 +132,206 @@
 						</div>
 					</div>
 				</div>
-  <div class="col-md-4">
+  <div class="col-md-8">
     <br>
 					<div class="panel panel-default">
 						<div class="panel-heading">Información</div>
-						<div class="panel-body">
-							<table class="table table-striped table-condensed">
-								<tbody>
-									<tr>
-										<td><strong>ID</strong></td>
-										<td>{{ pokemon.id }}</td>
-									</tr>
-									<tr>
-										<td><strong>Nombre</strong></td>
-										<td>{{ pokemon.name | uppercase}}
-                      <span ng-hide="!isSearching">
-                          {{tipo | uppercase}}
-            				  </span>
-                    </td>
-									</tr>
-									<tr>
-										<td><strong>Especie</strong></td>
-										<td>
-                      {{special_data.egg_groups[0].name}}
-                      {{special_data.egg_groups[1].name}}
-                    </td>
-									</tr>
-                  <tr>
-										<td><strong>Generación</strong></td>
-										<td>
-                      {{special_data.generation.name}}
+            <div class="panel-body">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="col-md-6">
+                  <div class="panel-heading">Data</div>
+                  <table class="table table-striped table-condensed">
+    								<tbody>
+    									<tr>
+    										<td ><strong>ID</strong></td>
+    										<td>{{ pokemon.id }}</td>
+    									</tr>
+    									<tr>
+    										<td><strong>Nombre</strong></td>
+    										<td>{{ pokemon.name | uppercase}}
+                          <span ng-hide="!isSearching">
+                              {{tipo | uppercase}}
+                				  </span>
+                        </td>
+    									</tr>
+                      <tr>
+    										<td><strong>Especie</strong></td>
+    										<td>
+                          {{special_data.genera[0].genus}}
+                          <span ng-hide="!isSearching">
+                            {{poke}}
+                          </span>
 
-                    </td>
-									</tr>
-									<tr>
-										<td>
-											<strong>
-												Tipo <span data-ng-if="pokemon.type.length > 1" ></span>
-											</strong>
-										</td>
-										<td>
+                        </td>
+    									</tr>
+    									<tr>
+    										<td><strong>Generación</strong></td>
+    										<td>
+                          {{special_data.generation.name}}
 
-                        <!--
-												<span ng-attr-id="{{pokemonType}}">{{pokemon.types[0].type.name}}</span>
-                        <span ng-attr-id="{{pokemonType2}}">{{pokemon.types[1].type.name}}</span>
-                        <div >{{pokemon.types[0].type.name}}</div>
-                        <div class="">{{pokemon.types[1].type.name}}</div>
+                        </td>
+    									</tr>
+    									<tr>
+    										<td>
+    											<strong>
+    												Tipo <span data-ng-if="pokemon.type.length > 1" ></span>
+    											</strong>
+    										</td>
+    										<td>
 
-                        -->
+                            <!--
+    												<span ng-attr-id="{{pokemonType}}">{{pokemon.types[0].type.name}}</span>
+                            <span ng-attr-id="{{pokemonType2}}">{{pokemon.types[1].type.name}}</span>
+                            <div >{{pokemon.types[0].type.name}}</div>
+                            <div class="">{{pokemon.types[1].type.name}}</div>
 
-                        <div data-ng-repeat="item in pokemon.types" class="">
-                            <ul class="">
-                              {{ item.type.name}}
+                            -->
 
-                            </ul>
-                        </div>
+                            <div data-ng-repeat="item in pokemon.types" class="">
+                                <ul class="">
+                                  {{ item.type.name}}
+
+                                </ul>
+                            </div>
 
 
 
-										</td>
-									</tr>
-									<tr>
-										<td><strong>Altura </strong></td>
+    										</td>
+    									</tr>
+    									<tr>
+    										<td><strong>Altura </strong></td>
 
-										<td>{{ pokemon.height  * 0.1 | number : 1 }}
-                      <span ng-hide="!isSearching">
-                        {{altura}}
-                      </span>
-                    </td>
-									</tr>
-									<tr>
-										<td><strong>Peso</strong></td>
-										<td>{{ pokemon.weight * 0.1 | number : 1 }}
-                      <span ng-hide="!isSearching">
-                        {{peso}}
-                      </span>
-                    </td>
-									</tr>
-									<tr>
-										<td><strong>Habilidades</strong></td>
-										<td>
-											<ul class="list-unstyled">
-                        <p>{{pokemon.abilities[0].ability.name }}</p>
-              					<p>{{pokemon.abilities[1].ability.name }}</p>
-              					<p>{{pokemon.abilities[2].ability.name }}</p>
-											</ul>
-										</td>
-									</tr>
-                  <tr>
-										<td><strong>Evolucióna a:</strong></td>
-										<td>
-                      {{nextEvo.chain.evolves_to[0].species.name}}
+    										<td>{{ pokemon.height  * 0.1 | number : 1 }}
+                          <span ng-hide="!isSearching">
+                            {{altura}}
+                          </span>
+                        </td>
+    									</tr>
+    									<tr>
+    										<td><strong>Peso</strong></td>
+    										<td>{{ pokemon.weight * 0.1 | number : 1 }}
+                          <span ng-hide="!isSearching">
+                            {{peso}}
+                          </span>
+                        </td>
+    									</tr>
+    									<tr>
+    										<td><strong>Habilidades</strong></td>
+    										<td>
+    											<ul class="list-unstyled">
+                            <p>{{pokemon.abilities[0].ability.name }}</p>
+                  					<p>{{pokemon.abilities[1].ability.name }}</p>
+                  					<p>{{pokemon.abilities[2].ability.name }}</p>
+    											</ul>
+    										</td>
+    									</tr>
+                      <tr>
+    										<td><strong>Preevolución</strong></td>
+    										<td>
 
-                    </td>
-									</tr>
-                  <tr>
-										<td><strong>Descripción</strong></td>
-										<td>
-                      {{special_data.flavor_text_entries[3].flavor_text}}
-                      {{special_data.flavor_text_entries[27].flavor_text}}
-                    </td>
-									</tr>
+                          {{special_data.evolves_from_species.name}}
 
-								</tbody>
-							</table>
+                        </td>
+    									</tr>
+                      <tr>
+    										<td><strong>Evoluciona a</strong></td>
+    										<td>
+                          {{nextEvo.chain.evolves_to[0].evolves_to[0].species.name}}
+
+                        </td>
+    									</tr>
+
+
+    								</tbody>
+    							</table>
+
+
+
+                </div>
+
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="panel-heading">Formación</div>
+                    <table class="table table-striped table-condensed">
+      								<tbody>
+      									<tr>
+      										<td ><strong>Tasa de Captura</strong></td>
+      										<td>{{special_data.capture_rate}}</td>
+      									</tr>
+      									<tr>
+      										<td><strong>Felicidad</strong></td>
+      										<td>{{special_data.base_happiness}}</td>
+      									</tr>
+                        <tr>
+      										<td><strong>Crecimiento</strong></td>
+      										<td>
+                            {{special_data.growth_rate.name}}
+
+
+                          </td>
+      									</tr>
+                      </tbody>
+                    </table>
+
+                  </div>
+
+                <div class="row">
+                  <div class="panel-heading">Cría</div>
+                  <table class="table table-striped table-condensed">
+                    <tbody>
+    									<tr>
+    										<td><strong>Grupo de Huevo</strong></td>
+    										<td>
+                          {{special_data.egg_groups[0].name}}
+                          {{special_data.egg_groups[1].name}}
+                        </td>
+    									</tr>
+                      <tr>
+    										<td><strong>Circulo de Huevos</strong></td>
+    										<td>
+                          {{special_data.hatch_counter}}
+
+                        </td>
+    									</tr>
+    								</tbody>
+    							</table>
+                </div>
+              </div>
+
+            </div>
+            <div class="row">
+              <div class="col-md-10 col-md-offset-1">
+                <tr>
+                  <td><strong>Descripción</strong></td>
+                  <td>
+                    {{special_data.flavor_text_entries[3].flavor_text}}
+                    {{special_data.flavor_text_entries[27].flavor_text}}
+                  </td>
+                </tr>
+              </div>
+
+            </div>
+
+
 						</div>
 					</div>
 				</div>
-
+      </div>
   <div class="col-md-4">
-    <br>
+
+
+     <script>
+     $(".slider").slick({
+                autoplay: true,
+                autoplaySpeed: 1600,
+                fade: true,
+                dots:false,
+                });
+     </script>
+  </div>
+  <div class="col-md-8 ">
+
 					<div class="panel panel-default">
 						<div class="panel-heading">Estadisitcas</div>
 						<div class="panel-body">
@@ -362,7 +469,7 @@
 					</div>
 				</div>
 
-</div>
+
 </div>
 </div>
 </div>

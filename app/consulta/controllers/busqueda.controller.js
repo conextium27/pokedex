@@ -12,6 +12,8 @@
            $scope.peso = "kg"
            $scope.parentesis1 = "("
            $scope.parentesis2 = ")"
+           $scope.parentesis2 = ")"
+           $scope.poke = "Pokémon"
            var vm = this;
 
 
