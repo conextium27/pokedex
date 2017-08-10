@@ -2,7 +2,7 @@
   <form>
 
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="sample4" ng-model="searchPokemon">
+        <input class="mdl-textfield__input" type="text" id="sample4" ng-model="searchPokemon ">
         <label class="mdl-textfield__label" for="sample4">numero o nombre pokemon </label>
 
       </div>
@@ -37,26 +37,81 @@
 					<div class="panel panel-default">
 						<div class="panel-heading">Normal</div>
 						<div class="panel-body">
-              <div class="col-md-6 center-block poke"
-                style="background-image: url('{{pokemon.sprites.front_default}}');">
+              <div class="col-md-6">
+                <div class="row">
+                  <div  class="col-md-12 center-block poke"
+                      style=" background-image: url('{{pokemon.sprites.front_default}}');">
+                        <i  aria-hidden="true"></i>
+                  </div>
+
+              <!--    <div class="poke"
+                     ng-init="''"
+                     ng-mouseenter=" {{pokemon.sprites.front_default}}"
+                     ng-mouseleave=" {{pokemon.sprites.back_default}}"
+                     style="background-image: url('{{pokemon.sprites.back_default}}');">123
+                  </div>  -->
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-md-offset-4 ">
+                    <span ng-hide="!isSearching">
+                      <i class="fa fa-mars"></i>
+                    </span>
+                  </div>
+                </div>
               </div>
-              <div class="col-md-6 center-block poke"
-                style="background-image: url('{{pokemon.sprites.front_female}}');">
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-12 center-block poke"
+                      style="background-image: url('{{pokemon.sprites.front_female}}');">
+                        <i  aria-hidden="true"></i>
+                  </div>
 
-
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-md-offset-4 ">
+                    <span ng-hide="!isSearching">
+                      <i class="fa fa-venus"></i>
+                    </span>
+                  </div>
+                </div>
               </div>
 
 						</div>
 					</div>
           <div class="panel panel-default">
 						<div class="panel-heading">SHINY</div>
-						<div class="panel-body ">
-              <div class="col-md-6 center-block poke"
-                style="background-image: url('{{pokemon.sprites.front_shiny}}');">
+						<div class="panel-body">
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-12 center-block poke"
+                      style="background-image: url('{{pokemon.sprites.front_shiny}}');">
+                        <i  aria-hidden="true"></i>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-md-offset-4 ">
+                    <span ng-hide="!isSearching">
+                      <i class="fa fa-mars"></i>
+                    </span>
+                  </div>
+                </div>
               </div>
-              <div class="col-md-6 center-block poke"
-                style="background-image: url('{{pokemon.sprites.front_shiny_female}}');">
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-12 center-block poke"
+                      style="background-image: url('{{pokemon.sprites.front_shiny_female}}');">
+                        <i  aria-hidden="true"></i>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-md-offset-4 ">
+                    <span ng-hide="!isSearching">
+                      <i class="fa fa-venus"></i>
+                    </span>
+                  </div>
+                </div>
               </div>
+
 						</div>
 					</div>
 				</div>
@@ -81,7 +136,17 @@
 									</tr>
 									<tr>
 										<td><strong>Especie</strong></td>
-										<td>{{ pokemon.speciesUrl.id }}</td>
+										<td>
+                      {{special_data.egg_groups[0].name}}
+                      {{special_data.egg_groups[1].name}}
+                    </td>
+									</tr>
+                  <tr>
+										<td><strong>Generación</strong></td>
+										<td>
+                      {{special_data.generation.name}}
+
+                    </td>
 									</tr>
 									<tr>
 										<td>
@@ -90,10 +155,24 @@
 											</strong>
 										</td>
 										<td>
-											<div  class="pull-left">
+
+                        <!--
 												<span ng-attr-id="{{pokemonType}}">{{pokemon.types[0].type.name}}</span>
                         <span ng-attr-id="{{pokemonType2}}">{{pokemon.types[1].type.name}}</span>
-											</div>
+                        <div >{{pokemon.types[0].type.name}}</div>
+                        <div class="">{{pokemon.types[1].type.name}}</div>
+
+                        -->
+
+                        <div data-ng-repeat="item in pokemon.types" class="">
+                            <ul class="">
+                              {{ item.type.name}}
+
+                            </ul>
+                        </div>
+
+
+
 										</td>
 									</tr>
 									<tr>
@@ -117,9 +196,6 @@
 										<td><strong>Habilidades</strong></td>
 										<td>
 											<ul class="list-unstyled">
-												<li data-ng-repeat="ability in ability">
-													<a href="#/ability/{{ ability | normalize }}">{{ ability }}</a>
-												</li>
                         <p>{{pokemon.abilities[0].ability.name }}</p>
               					<p>{{pokemon.abilities[1].ability.name }}</p>
               					<p>{{pokemon.abilities[2].ability.name }}</p>
@@ -127,9 +203,20 @@
 										</td>
 									</tr>
                   <tr>
-                    <td><strong>Movimientos</strong></td>
-                     {{moves.length}}
-                  </tr>
+										<td><strong>Evolucióna a:</strong></td>
+										<td>
+                      {{nextEvo.chain.evolves_to[0].species.name}}
+
+                    </td>
+									</tr>
+                  <tr>
+										<td><strong>Descripción</strong></td>
+										<td>
+                      {{special_data.flavor_text_entries[3].flavor_text}}
+                      {{special_data.flavor_text_entries[27].flavor_text}}
+                    </td>
+									</tr>
+
 								</tbody>
 							</table>
 						</div>
@@ -279,6 +366,9 @@
 </div>
 </div>
 </div>
+
+
+
 
 
 </section>
