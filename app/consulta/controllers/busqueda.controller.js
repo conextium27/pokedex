@@ -15,30 +15,6 @@
            $scope.parentesis2 = ")"
            $scope.poke = "Pokémon"
            var vm = this;
-
-
-           var typeLookup = {
-             "normal": "normal",
-             "fire": "fire",
-             "water": "water",
-             "electric": "electric",
-             "grass": "grass",
-             "fighting": "fighting",
-             "poison": "poison",
-             "ground": "ground",
-             "flying": "flying",
-             "bug": "bug",
-             "rock": "rock",
-             "ghost": "ghost",
-             "dragon": "dragon",
-             "dark": "dark",
-             "steel": "steel",
-             "fairy": "fairy",
-             "psychic": "psychic",
-             "ice": "ice"
-           };
-
-           $scope.pokemonType = '';
   	       $scope.isSearching = false;
            $scope.evolution_chain = '';
            //$scope.speciesUrl = '';

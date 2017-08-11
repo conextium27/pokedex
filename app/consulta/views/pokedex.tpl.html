@@ -186,14 +186,19 @@
                             <div >{{pokemon.types[0].type.name}}</div>
                             <div class="">{{pokemon.types[1].type.name}}</div>
 
-                            -->
+
 
                             <div data-ng-repeat="item in pokemon.types" class="">
                                 <ul class="">
                                   {{ item.type.name}}
-
                                 </ul>
-                            </div>
+                            </div>    -->
+                            <div data-ng-repeat="item in pokemon.types" class="pull-left">
+												      <span class="label label-{{ item.type.name | colortype }}">
+													       {{ item.type.name }}
+												      </span>
+
+											      </div>
 
 
 

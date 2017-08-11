@@ -9,7 +9,7 @@
     'app.pokedex'
   ]);
     angular.module('app.consulta', []);
-        angular.module('app.pokedex', []);
+    angular.module('app.pokedex', []);
     angular.module('app.usuarios', []);
 
 })();
